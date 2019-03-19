@@ -1,0 +1,30 @@
+{
+  "presets": ["@babel/preset-typescript", "@babel/preset-env", "@babel/preset-react"],
+  "plugins": [
+    "@babel/plugin-proposal-export-default-from",
+    [
+      "file-loader",
+      {
+        "name": "assets/[name].[ext]",
+        "extensions": ["png", "jpg", "jpeg", "gif", "svg", "woff", "woff2"],
+        "publicPath": "/",
+        "outputPath": null
+      }
+    ],
+    [
+      "module-resolver",
+      {
+        "alias": {
+          "@devtools": "./devtools",
+          "@assets": "./src/assets",
+          "@components": "./src/components",
+          "@containers": "./src/containers",
+          "@pages": "./src/pages",
+          "@sagas": "./src/sagas",
+          "@reducers": "./src/reducers",
+          "@services": "./src/services"
+        }
+      }
+    ]
+  ]
+}

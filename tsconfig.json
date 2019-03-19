@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "outDir": "dist/",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "module": "commonjs",
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true,
+    "target": "es6",
+    "baseUrl": "./",
+    "paths": {
+      "@devtools/*": ["devtools/*"],
+      "@assets/*": ["src/assets/*"],
+      "@components/*": ["src/components/*"],
+      "@containers/*": ["src/containers/*"],
+      "@pages/*": ["src/pages/*"],
+      "@reducers/*": ["src/reducers/*"],
+      "@sagas/*": ["src/sagas/*"],
+      "@services/*": ["src/services/*"]
+    }
+  },
+  "include": [
+    "**/*.d.ts",
+    "./devtools/**/*.tsx",
+    "./devtools/**/*.ts",
+    "./src/**/*.tsx",
+    "./src/**/*.ts",
+    "./src/__tests__"
+  ],
+  "exclude": ["node_modules"]
+}
