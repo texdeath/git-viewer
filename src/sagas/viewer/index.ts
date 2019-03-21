@@ -37,7 +37,6 @@ export function* getUserRepos(action: any) {
   const { payload } = action;
   try {
     const fetch = yield fetchPosts(`${baseUrl}/users/${payload}/repos`);
-    console.log(fetch);
     yield put(successGetUserRepos(fetch));
   } catch (error) {
     yield put(failureGetUserRepos(error));
