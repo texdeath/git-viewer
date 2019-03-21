@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "skipLibCheck": true,
+    "lib": ["es6","dom"],
     "outDir": "dist/",
     "sourceMap": true,
     "noImplicitAny": true,

@@ -1,33 +1,36 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { getUsers } from '@reducers/viewer/actions';
-import { List, Card } from './style';
+import { List, Card, Avater, UserName } from './style';
 
-class DataFetch extends React.Component<UsersDataProps, {}> {
+class UsersList extends React.Component<UsersDataProps, {}> {
   constructor(props: UsersDataProps) {
     super(props)
   }
 
   componentDidMount() {
-    this.props.getUsers();
+    const { getUsers } = this.props;
+    getUsers();
   }
 
   render() {
-    const { users, isLoading } = this.props;
-    console.log(users);
-    if(isLoading) {
+    const { users, isListLoading } = this.props;
+    if(isListLoading) {
       return <p>Loading...</p>
     }
     return (
       <List>
         {
           users.map((user: any) => {
+            const { id, login, avatar_url } = user;
             return (
-              <Card key={user.id}>
-                <a href={user.html_url}>
-                  <img src={user.avatar_url} alt={user.login} />{user.login}
-                </a>
+              <Link to={`/user/${login}`} style={{ margin :'8px'}} key={id}>
+              <Card>
+                  <UserName>{login}</UserName>
+                  <Avater src={avatar_url} alt={login} />
               </Card>
+              </Link>
             )
           })
         }
@@ -39,11 +42,11 @@ class DataFetch extends React.Component<UsersDataProps, {}> {
 const mapStateToProps = (state: any) => {
   return {
     users: state.viewer.users,
-    isLoading: state.viewer.isLoading
+    isListLoading: state.viewer.isListLoading
   };
 };
 
 export default connect(
   mapStateToProps,
   { getUsers }
-)(DataFetch);
+)(UsersList);

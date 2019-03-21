@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Container, Title } from './ui';
+import { Container, Title } from './styles';
 
 export const Footer: React.FC<any> = () => (
   <Container>

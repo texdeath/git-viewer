@@ -11,7 +11,8 @@ export const Container = styled.li`
 export const Content = styled.div``;
 
 export const Label = styled.p`
-  margin-bottom: 40px;
+  margin-bottom: 20px;
+  font-size: 2rem;
   color: #1a1a1a;
   font-weight: 900;
 `;

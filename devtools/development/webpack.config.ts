@@ -18,7 +18,7 @@ export default (port: number): webpack.Configuration => ({
   output: {
     filename: 'js/bundle.js',
     path: distPath,
-    publicPath: `http://localhost:${port}/`
+    publicPath: `/`
   },
   devtool: 'source-map',
   resolve: {
@@ -36,7 +36,7 @@ export default (port: number): webpack.Configuration => ({
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
-      'process.env': { 
+      'process.env': {
         NODE_ENV: JSON.stringify('development'),
         PERSONAL_ACCESS_TOKEN: JSON.stringify(process.env.PERSONAL_ACCESS_TOKEN),
        }
