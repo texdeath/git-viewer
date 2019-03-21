@@ -36,8 +36,6 @@ yarn dev # or npm dev
 - styled-components
 ### Module Bundle
 - webpack
-### Testing
-- jest & enzyme
 ### Lint
 - eslint
 ### Architecture
