@@ -43,9 +43,9 @@ yarn dev # or npm dev
 ### Architecture
 - SSR (Server-Side Rendering)
 ### Design Pattern
-- ducks (a modern and optimized way to work with redux structure)
+- ducks
 ### Fetch
 - axios
 - express
 ### Package Manager
-yarn
+- yarn
